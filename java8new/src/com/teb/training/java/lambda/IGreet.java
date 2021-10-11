@@ -7,4 +7,9 @@ public interface IGreet {
 
     String greet(Person personParam);
 
+
+    default void test() {
+        this.greet(new Person());
+        System.out.println("test");
+    }
 }

@@ -13,17 +13,23 @@ public class LambdaRun {
         personLoc.setWeight(95);
         System.out.println("------------Normal class-------------");
         IGreet greetLoc = new GreetENG();
-        LambdaRun.runGreeting(greetLoc,
-                              personLoc);
-        System.out.println("------------Anonim class-------------");
+        IGreet greetLoc3 = a -> "Hello " + a.getName() + " " + a.getSurname();
+        greetLoc3.greet(personLoc);
         IGreet greetLoc2 = new IGreet() {
 
             @Override
             public String greet(final Person a) {
-                System.out.println(name);
+                //System.out.println(name);
                 return "Hello " + a.getName() + " " + a.getSurname();
             }
         };
+
+        LambdaRun.runGreeting(greetLoc,
+                              personLoc);
+
+
+        System.out.println("------------Anonim class-------------");
+
         LambdaRun.runGreeting(greetLoc2,
                               personLoc);
 
@@ -56,7 +62,7 @@ public class LambdaRun {
 
         System.out.println("------------end-------------");
 
-        IGreet greetLoc3 = a -> "Hello " + a.getName() + " " + a.getSurname();
+
         IGreet greetLoc4 = b -> {
             System.out.println(name);
             return "Hello " + b.getName() + " " + b.getSurname();
