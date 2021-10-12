@@ -1,0 +1,5 @@
+osman;yaycıoğlu;200;95
+nil;yaycıoğlu;178;61
+ali;veli;190
+ali;veli;190;90
+ayşe;ulak;180;55

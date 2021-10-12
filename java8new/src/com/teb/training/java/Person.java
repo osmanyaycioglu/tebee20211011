@@ -44,5 +44,18 @@ public class Person {
         return this;
     }
 
+    @Override
+    public String toString() {
+        return "Person [name="
+               + this.name
+               + ", surname="
+               + this.surname
+               + ", height="
+               + this.height
+               + ", weight="
+               + this.weight
+               + "]";
+    }
+
 
 }

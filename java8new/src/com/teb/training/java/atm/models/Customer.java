@@ -58,5 +58,20 @@ public class Customer {
         return this;
     }
 
+    @Override
+    public String toString() {
+        return "Customer [username="
+               + this.username
+               + ", password="
+               + this.password
+               + ", name="
+               + this.name
+               + ", surname="
+               + this.surname
+               + ", amount="
+               + this.amount
+               + "]";
+    }
+
 
 }
