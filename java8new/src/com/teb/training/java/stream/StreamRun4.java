@@ -31,6 +31,8 @@ public class StreamRun4 {
 
         stringsLoc.stream()
                   .distinct()
+                  .sorted()
+                  .peek(System.out::println)
                   .dropWhile(s -> s.length() > 4)
                   .forEach(s -> System.out.println(s));
 
