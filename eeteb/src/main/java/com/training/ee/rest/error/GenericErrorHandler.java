@@ -10,6 +10,7 @@ public class GenericErrorHandler implements ExceptionMapper<Exception> {
 
     @Override
     public Response toResponse(final Exception exceptionParam) {
+        exceptionParam.printStackTrace();
         return Response.status(Status.INTERNAL_SERVER_ERROR)
                        .header("error",
                                "internal")
