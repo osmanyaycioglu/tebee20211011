@@ -1,5 +1,8 @@
 package com.training.ee.rest.customer;
 
+import java.io.Serializable;
+
+import javax.enterprise.context.RequestScoped;
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.ws.rs.Consumes;
@@ -14,7 +17,16 @@ import com.training.ee.rest.Customer;
 
 @Path("/v1/customer/provision")
 @Valid
-public class CustomerProvision {
+@RequestScoped
+//@SessionScoped - Rest de kullanılmaz
+//@ApplicationScoped
+public class CustomerProvision implements Serializable {
+
+    private static final long serialVersionUID = 7606636330302915675L;
+
+    public CustomerProvision() {
+        System.out.println("CustomerProvision yaratıldı");
+    }
 
     @Path("/add")
     @POST
