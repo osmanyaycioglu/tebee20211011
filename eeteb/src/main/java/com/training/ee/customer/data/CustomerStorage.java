@@ -15,6 +15,8 @@ import com.training.ee.customer.service.models.CustomerInternal;
 public class CustomerStorage {
 
     private final Map<String, CustomerInternal> customerCache = new ConcurrentHashMap<>();
+    //    private List<String> strings = new Vector<>();
+    //    private List<String> strings2 = Collections.synchronizedList(new ArrayList<>());
 
     public void add(final CustomerInternal customerParam) {
         this.customerCache.put(customerParam.getUsername(),
