@@ -1,7 +1,15 @@
 package com.training.ee.customer.service.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class CustomerInternal {
 
+    @Id
+    @GeneratedValue
+    private Long    customerId;
     private String  username;
     private String  password;
     private String  name;
@@ -70,6 +78,14 @@ public class CustomerInternal {
     public CustomerInternal setAmount(final Integer amountParam) {
         this.amount = amountParam;
         return this;
+    }
+
+    public Long getCustomerId() {
+        return this.customerId;
+    }
+
+    public void setCustomerId(final Long customerIdParam) {
+        this.customerId = customerIdParam;
     }
 
 
