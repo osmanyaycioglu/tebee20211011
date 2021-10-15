@@ -22,18 +22,6 @@ public class CustomerDao {
     @PersistenceContext(unitName = "eeteb")
     private EntityManager em;
 
-    //    public void addPure(final CustomerInternal customerParam) {
-    //        this.em.getTransaction()
-    //               .begin();
-    //        try {
-    //            this.em.persist(customerParam);
-    //            this.em.getTransaction()
-    //                   .commit();
-    //        } catch (Exception eLoc) {
-    //            this.em.getTransaction()
-    //                   .rollback();
-    //        }
-    //    }
 
     @Transactional
     public void add(final CustomerInternal customerParam) {
@@ -81,5 +69,17 @@ public class CustomerDao {
         return createNativeQueryLoc.getResultList();
     }
 
+    //    public void addPure(final CustomerInternal customerParam) {
+    //        this.em.getTransaction()
+    //               .begin();
+    //        try {
+    //            this.em.persist(customerParam);
+    //            this.em.getTransaction()
+    //                   .commit();
+    //        } catch (Exception eLoc) {
+    //            this.em.getTransaction()
+    //                   .rollback();
+    //        }
+    //    }
 
 }
