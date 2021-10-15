@@ -34,10 +34,36 @@ public class Customer {
     private String  surname;
     @HeaderParam("amount")
 
+    @NotEmpty
+    private String  street;
+
+    @NotEmpty
+    private String  city;
+
     @Max(50_000_000)
     @Min(100)
     @Positive
     private Integer amount;
+
+
+    public String getStreet() {
+        return this.street;
+    }
+
+
+    public void setStreet(final String streetParam) {
+        this.street = streetParam;
+    }
+
+
+    public String getCity() {
+        return this.city;
+    }
+
+
+    public void setCity(final String cityParam) {
+        this.city = cityParam;
+    }
 
     public String getUsername() {
         return this.username;

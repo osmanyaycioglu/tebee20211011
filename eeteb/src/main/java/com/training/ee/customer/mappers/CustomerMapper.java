@@ -1,5 +1,6 @@
 package com.training.ee.customer.mappers;
 
+import com.training.ee.customer.service.models.Address;
 import com.training.ee.customer.service.models.CustomerInternal;
 import com.training.ee.rest.Customer;
 
@@ -15,6 +16,8 @@ public class CustomerMapper {
         c.setName(cp.getName());
         c.setSurname(cp.getSurname());
         c.setAmount(cp.getAmount());
+        c.setAddress(new Address().setCity(cp.getCity())
+                                  .setStreet(cp.getStreet()));
         return c;
     }
 
@@ -28,6 +31,10 @@ public class CustomerMapper {
         c.setName(cp.getName());
         c.setSurname(cp.getSurname());
         c.setAmount(cp.getAmount());
+        c.setStreet(cp.getAddress()
+                      .getStreet());
+        c.setCity(cp.getAddress()
+                    .getCity());
         return c;
     }
 

@@ -1,10 +1,15 @@
 package com.training.ee.customer.service.models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "customer")
 public class CustomerInternal {
 
     @Id
@@ -15,6 +20,9 @@ public class CustomerInternal {
     private String  name;
     private String  surname;
     private Integer amount;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Address address;
 
     public String getUsername() {
         return this.username;
@@ -86,6 +94,14 @@ public class CustomerInternal {
 
     public void setCustomerId(final Long customerIdParam) {
         this.customerId = customerIdParam;
+    }
+
+    public Address getAddress() {
+        return this.address;
+    }
+
+    public void setAddress(final Address addressParam) {
+        this.address = addressParam;
     }
 
 
